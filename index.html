@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Free AI Video Studio</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><main class="shell">
+<header><div class="mark">▶</div><div><h1>Free AI Video Studio</h1><p>Local-first video creation · No paid API keys</p></div><span id="health" class="pill">Checking FFmpeg…</span></header>
+<nav><button class="tab active" data-tab="story">Story / Text</button><button class="tab" data-tab="images">Images to Video</button><button class="tab" data-tab="audio">Audio Visualizer</button></nav>
+<section id="story" class="panel active"><h2>Turn a script into a video</h2><p class="muted">Each sentence becomes a designed scene card. Optional narration uses a local system voice.</p>
+<label>Story or script<textarea id="script" rows="7" placeholder="Once upon a time, in a quiet village...&#10;A curious rabbit discovered a hidden garden..."></textarea></label>
+<div class="grid"><label>Format<select id="storyAspect"><option value="vertical">Vertical · Reels / Shorts (9:16)</option><option value="landscape">Landscape · YouTube (16:9)</option></select></label><label>Seconds per scene<input id="sceneSeconds" type="number" min="2" max="15" value="4"></label></div>
+<label class="check"><input id="narration" type="checkbox"> Generate local text-to-speech narration (if supported)</label><button class="primary" id="makeStory">Create story video</button><div id="storyResult" class="result"></div></section>
+<section id="images" class="panel"><h2>Turn images into a video</h2><p class="muted">Upload photos in the order you want them to appear. Add optional audio.</p>
+<label>Images (JPG, PNG, WebP)<input id="imageFiles" type="file" accept="image/*" multiple></label><label>Optional narration or music<input id="imageAudio" type="file" accept="audio/*"></label>
+<div class="grid"><label>Format<select id="imageAspect"><option value="vertical">Vertical · 9:16</option><option value="landscape">Landscape · 16:9</option></select></label><label>Seconds per image<input id="imageSeconds" type="number" min="2" max="15" value="3"></label></div><button class="primary" id="makeImages">Create slideshow video</button><div id="imageResult" class="result"></div></section>
+<section id="audio" class="panel"><h2>Make an audio visualizer</h2><p class="muted">Create a vertical or landscape video with a moving waveform and your original audio.</p><label>Audio file (MP3, WAV, M4A, AAC, OGG)<input id="audioFile" type="file" accept="audio/*"></label><label>Format<select id="audioAspect"><option value="vertical">Vertical · Reels / Shorts (9:16)</option><option value="landscape">Landscape · YouTube (16:9)</option></select></label><button class="primary" id="makeAudio">Create audio video</button><div id="audioResult" class="result"></div></section>
+<footer><span>Runs on your computer. GitHub hosts the code, not the video rendering.</span><span>Open source MVP</span></footer>
+</main><script src="/static/app.js"></script></body></html>
